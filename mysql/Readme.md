@@ -1,8 +1,12 @@
 #Mysql Image
 
+### About
+
+  For this scenario we will use the "mysql" image and "latest" tag.
+
 ### Create container 
 
-Let's create container using: 
+  Let's create container using: 
 - custom mysql data shared folder;
 - custom mysql configuration folder; 
 - custom mysql log folder;
