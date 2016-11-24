@@ -13,15 +13,26 @@
   - custom root password : 123456
   - custom user : admin
   - custom user password : admin
+  - custom mysql root Host : 0.0.0.0
 ```
 docker run --name mysql-container  -v /private/var/www/databases/mysql/conf.d:/etc/mysql/conf.d -v /private/var/www/databases/mysql/data:/var/lib/mysql  -v /private/var/www/databases/mysql/log:/var/log/ -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=0.0.0.0 -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -d mysql:latest
 ```
-
-   Or, maybe more simple:
+  Or, without configuration folder: 
+  - custom mysql data shared folder;
   - custom mysql log folder;
   - custom root password : 123456
   - custom user : admin
   - custom user password : admin
+  - custom mysql root Host : 0.0.0.0
+```
+docker run --name mysql-container -v /private/var/www/databases/mysql/data:/var/lib/mysql  -v /private/var/www/databases/mysql/log:/var/log/ -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin  -e MYSQL_ROOT_HOST=0.0.0.0 -d mysql:latest
+```
+   Or, maybe MOREEE simple:
+  - custom mysql log folder;
+  - custom root password : 123456
+  - custom user : admin
+  - custom user password : admin
+  - custom mysql root Host : 0.0.0.0
 ```
 docker run --name mysql-container -v /private/var/www/databases/mysql/log:/var/log/ -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=0.0.0.0 -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -d mysql:latest
 ```
@@ -29,6 +40,7 @@ docker run --name mysql-container -v /private/var/www/databases/mysql/log:/var/l
    EVEN MORE simple! So...
   - custom mysql log folder;
   - custom root password : 123456
+  - custom mysql root Host : 0.0.0.0
 ```
 docker run --name mysql-container -v /private/var/www/databases/mysql/log:/var/log/ -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_ROOT_HOST=0.0.0.0 -d mysql:latest
 ```
